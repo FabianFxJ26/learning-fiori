@@ -1,0 +1,8 @@
+<mvc:View controllerName="learningfiori.invoices.controller.MainView"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content><Text id="bienvenida" text="Hello world, let's go Fabian"></Text>
+        </content>
+    </Page>
+</mvc:View>
