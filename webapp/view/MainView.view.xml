@@ -7,8 +7,6 @@
    <Label id="labelShipName" labelFor="shipName" text="{i18n>shipName}" class="sapUiSmallMargin"/>
    <Input id="shipName" width="200px" class="sapUiSmallMarginEnd"/>
    <Label id="labelCountry" text="{i18n>country}" class="sapUiSmallMargin"/>
-   <Label id="labelTest" text="{i18n>labelTest}" labelFor="testInput" class="sapUiSmallMargin"></Label>
-   <Input id="testInput" width="300px"></Input>
    </Panel>
    </content> 
     </Page>
