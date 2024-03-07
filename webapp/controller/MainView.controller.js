@@ -10,7 +10,14 @@ sap.ui.define([
         //Prototipado, y pasamos un objeto tipo json.
         return Controller.extend("learningfiori.invoices.controller.MainView", {
             onInit: function () {
-
+                const oJSONModel = new sap.ui.model.json.JSONMODEL();
+                //Enlazar json model con la vista
+                const oView = this.getView();
+                //Cargo la data definida en el archivo json
+                oJSONModel.loadData("./model/selectionScreenMenu.json");
+                oView.setModel(oJSONModel, "Selection screen");
+                //Otra forma
+                //this.getView().setModel(oJSONModel,"Selection screen");
             }
         });
     });
