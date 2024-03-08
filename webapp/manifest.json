@@ -14,6 +14,17 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.12.5",
       "toolsId": "f9c202de-4162-4b94-b95c-77fc3a374f6f"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V3/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -57,6 +68,11 @@
         "settings": {
           "bundleName": "learningfiori.invoices.i18n.i18n"
         }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
       }
     },
     "resources": {
