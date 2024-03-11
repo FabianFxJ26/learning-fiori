@@ -3,39 +3,40 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
-   <content>
-   <Panel id="panel" headerText="{i18n>selectionScreen}">
-   <Label id="labelShipName" labelFor="shipName" text="{i18n>shipName}" class="sapUiSmallMargin"/>
-   <Input id="shipName" width="200px" class="sapUiSmallMarginEnd"/>
-   <Label id="labelCountry" text="{i18n>country}" class="sapUiSmallMargin"/>
-   <Select id="selectCountry" selectedKey="{selectionScreen>/CountryKey}"
+      <content>
+       <Panel id="panel" headerText="{i18n>selectionScreen}">
+          <Label id="labelShipName" labelFor="shipName" text="{i18n>shipName}" class="sapUiSmallMargin"/>
+            <Input id="shipName" width="200px" class="sapUiSmallMarginEnd"/>
+         <Label id="labelCountry" text="{i18n>country}" class="sapUiSmallMargin"/>
+            <Select id="selectCountry" selectedKey="{selectionScreen>/CountryKey}"
                               forceSelection="false" 
                               items="{selectionScreen>/Countries}">
                               <items>
-                              <core:Item id="coreItem" key="{selectionScreen>key}"
-                              text="{selectionScreen>text}"/>
+                                   <core:Item id="coreItem" key="{selectionScreen>key}"
+                                   text="{selectionScreen>text}"/>
                               </items>
-                              </Select>
-   </Panel>
-   <Panel id="invoicesPanel">
-   <List id="invoicesList" 
-   headerText="{i18n>invoicesHeaderList}"
-   class="sapUiResponsiveMargin"
-   width="auto"
-   items="{/Invoices}">
-   <items>
-   <ObjectListItem id="objectList" title="{ShipName} - {Country}"
-   number="{ parts:[{path :'ExtendedPrice'},
+            </Select>
+      </Panel>
+       <Panel id="invoicesPanel">
+          <List id="invoicesList" 
+          headerText="{i18n>invoicesHeaderList}"
+          class="sapUiResponsiveMargin"
+          width="auto"
+          items="{/Invoices}">
+           <items>
+             <ObjectListItem id="objectList" title="{ShipName} - {Country}"
+              number="{ parts:[{path :'ExtendedPrice'},
                     {path :'selectionScreen>/Currency'}],
                     type : 'sap.ui.model.type.Currency',
                     formatOptions: {
                         showMeasure :false
                     }}"
-                    numberUnit="{selectionScreen>/Currency}">
-   </ObjectListItem>
-   </items>
-   </List>
-   </Panel>
-   </content> 
-    </Page>
+                    numberUnit="{selectionScreen>/Currency}"
+                    numberState="{=${ExtendedPrice}>100 ?'Success':'Warning'}">
+             </ObjectListItem>
+          </items>
+         </List>
+       </Panel>
+     </content> 
+   </Page>
 </mvc:View>
